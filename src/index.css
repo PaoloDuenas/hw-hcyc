@@ -29,13 +29,27 @@ body {
   color: var(--ivory);
   font-family: 'EB Garamond', serif;
   overflow-x: hidden;
-  /* Premium Texture Overlay */
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: -5%;
+  left: -5%;
+  width: 110%;
+  height: 110%;
   background-image:
-    radial-gradient(circle at 50% 50%, rgba(107, 78, 49, 0.15) 0%, transparent 80%),
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    radial-gradient(circle at 50% 50%, rgba(107, 78, 49, 0.2) 0%, transparent 70%),
+    linear-gradient(rgba(10, 8, 5, 0.7), rgba(10, 8, 5, 0.8)),
     url("C:/Users/paolo/.gemini/antigravity/brain/72eb6ae8-0c79-4707-85bd-658a1acc3bd2/oxidized_bronze_plate_detail_1772121196426.png");
   background-attachment: fixed;
   background-size: cover;
+  background-position: center;
+  filter: blur(12px) opacity(0.85);
+  /* The requested blur effect */
+  z-index: -1;
+  pointer-events: none;
 }
 
 .museum-frame {
