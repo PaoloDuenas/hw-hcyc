@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  --bronze-dark: #4a3424;
+  --bronze-mid: #9c7a52;
+  --bronze-gold: #dcb36b;
+  --bronze-light: #f4dca6;
+  --verdigris: #43b3ae;
+  --ivory: #faf3e0;
+  --background: #2a221b;
+  /* Brighter than the old #0a0805 */
+}
+
+@theme {
+  --color-bronze-dark: var(--bronze-dark);
+  --color-bronze-mid: var(--bronze-mid);
+  --color-bronze-gold: var(--bronze-gold);
+  --color-bronze-light: var(--bronze-light);
+  --color-verdigris: var(--verdigris);
+  --color-ivory: var(--ivory);
+}
+
+@import "tailwindcss";
+@source "./src";
+
+body {
+  margin: 0;
+  background-color: var(--background);
+  color: var(--ivory);
+  font-family: 'EB Garamond', serif;
+  overflow-x: hidden;
+  /* Premium Texture Overlay */
+  background-image:
+    radial-gradient(circle at 50% 50%, rgba(107, 78, 49, 0.15) 0%, transparent 80%),
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("C:/Users/paolo/.gemini/antigravity/brain/72eb6ae8-0c79-4707-85bd-658a1acc3bd2/oxidized_bronze_plate_detail_1772121196426.png");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.museum-frame {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 30px 16px;
+  min-height: 100vh;
+}
+
+@media (min-width: 768px) {
+  .museum-frame {
+    padding: 60px 20px;
+  }
+}
+
+.parchment-panel {
+  background-image: url("C:/Users/paolo/.gemini/antigravity/brain/72eb6ae8-0c79-4707-85bd-658a1acc3bd2/ancient_greek_parchment_texture_1772121161036.png");
+  background-size: cover;
+  color: #2a1b10;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), inset 0 0 100px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(107, 78, 49, 0.3);
+  position: relative;
+}
+
+.parchment-panel::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Cinzel', serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.bronze-glow {
+  text-shadow: 0 0 10px rgba(197, 160, 89, 0.3);
+}
+
+.metallic-button {
+  background: linear-gradient(135deg, var(--bronze-mid), var(--bronze-dark));
+  border: 1px solid var(--bronze-gold);
+  color: var(--ivory);
+  transition: all 0.3s ease;
+}
+
+.metallic-button:hover {
+  background: linear-gradient(135deg, var(--bronze-gold), var(--bronze-mid));
+  box-shadow: 0 0 15px rgba(197, 160, 89, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bronze-dark);
+  border: 1px solid var(--bronze-mid);
+}
+
+/* Crank styling override - Mobile Optimized */
+input[type=range] {
+  -webkit-appearance: none;
+  background: transparent;
+  height: 32px;
+  /* Increased tap target */
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  background: var(--bronze-dark);
+  height: 12px;
+  /* Made track thicker */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 36px;
+  /* Much larger thumb for fingers */
+  height: 36px;
+  margin-top: -13px;
+  /* Centered visually */
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, var(--bronze-light), var(--bronze-mid), var(--bronze-dark));
+  border: 2px solid #1a110a;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6), inset 0 2px 4px rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+input[type=range]::-webkit-slider-thumb:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6), inset 0 1px 2px rgba(255, 255, 255, 0.4);
+}
