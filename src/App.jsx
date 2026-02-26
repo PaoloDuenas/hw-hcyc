@@ -26,23 +26,26 @@ function App() {
     <div className="museum-frame flex flex-col items-center bg-background/90 text-ivory">
       <header className="text-center mb-10 md:mb-16 space-y-4 px-4 w-full">
         <h1 className="text-4xl sm:text-5xl md:text-7xl bronze-glow text-bronze-light font-bold drop-shadow-md tracking-tight">Fragmentos de Anticitera</h1>
-        <div className="flex items-center justify-center gap-2 md:gap-4 text-bronze-gold italic text-sm sm:text-lg md:text-xl">
-          <span className="h-[2px] w-12 sm:w-24 bg-gradient-to-r from-transparent via-bronze-gold to-transparent"></span>
-          <p className="tracking-widest text-center">Primera Computadora del Mundo <br className="sm:hidden" />• 150 a.C.</p>
-          <span className="h-[2px] w-24 bg-gradient-to-r from-transparent via-bronze-gold to-transparent"></span>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 md:gap-4 text-bronze-gold italic text-sm sm:text-lg md:text-xl w-full">
+          <span className="h-[2px] w-12 sm:w-24 bg-gradient-to-r from-transparent via-bronze-gold to-transparent hidden sm:block"></span>
+          <p className="tracking-widest text-center w-full sm:w-auto">Primera Computadora del Mundo <br className="sm:hidden" />• 150 a.C.</p>
+          <span className="h-[2px] w-12 sm:w-24 bg-gradient-to-r from-transparent via-bronze-gold to-transparent hidden sm:block"></span>
         </div>
       </header>
 
       <main className="w-full flex flex-col lg:flex-row items-center lg:items-start justify-center gap-10 md:gap-16 relative">
         {/* Antikythera Core Visual */}
-        <div className="sticky top-4 z-50 w-full max-w-[95vw] lg:max-w-[650px] bg-[#1a1510]/95 lg:bg-white/5 p-2 md:p-4 lg:p-8 rounded-3xl lg:rounded-full shadow-[0_15px_30px_rgba(0,0,0,0.6)] lg:shadow-[0_0_80px_rgba(220,179,107,0.15)] backdrop-blur-xl border border-bronze-mid/30 transition-all">
+        <div className="sticky top-4 z-50 w-full max-w-[60vw] lg:max-w-[650px] mx-auto bg-[#1a1510]/80 lg:bg-white/5 p-2 md:p-4 lg:p-8 rounded-full lg:rounded-[3rem] shadow-[0_10px_20px_rgba(0,0,0,0.5)] lg:shadow-[0_0_80px_rgba(220,179,107,0.15)] backdrop-blur-xl border border-bronze-mid/30 transition-all">
           <Mechanism positions={positions} />
         </div>
 
         {/* Dashboard (Museum Catalog Style) */}
         <aside className="parchment-panel w-full max-w-lg p-6 md:p-10 rounded-xl border-double border-[4px] md:border-[6px] border-bronze-mid/40 shadow-2xl bg-[#fdfaf3] text-[#2a1b10] z-10 relative">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-6 mb-8 border-b-2 border-bronze-dark/30 pb-4">
-            <h2 className="text-2xl md:text-3xl flex items-center gap-3 font-bold text-bronze-dark font-serif text-center sm:text-left">
+            <h2
+              className="text-2xl md:text-3xl flex items-center gap-3 font-bold text-bronze-dark font-serif text-center sm:text-left"
+              style={{ textShadow: "0px 1px 3px rgba(253, 250, 243, 0.9), 0px 0px 10px rgba(253, 250, 243, 0.8)" }}
+            >
               <Compass className="text-bronze-mid w-6 h-6 md:w-8 md:h-8" />
               Panel de Control
             </h2>
